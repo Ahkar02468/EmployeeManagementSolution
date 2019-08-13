@@ -15,9 +15,9 @@ namespace EmployeeManagement.Controllers
         {
             _employeeRepository = employeeRepository;
         }
-        public JsonResult Index()
+        public string Index()
         {
-            return Json(new { id=1,name="John Doe"});
+            return _employeeRepository.GetEmployees(1).Name;
         }
     }
 }
