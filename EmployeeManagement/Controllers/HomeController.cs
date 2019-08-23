@@ -9,20 +9,20 @@ using System.Threading.Tasks;
 namespace EmployeeManagement.Controllers
 {
     
-    public class WelcomeController : Controller
+    public class HomeController : Controller
     {
         private readonly IEmployeeRepository _employeeRepository;
 
-        public WelcomeController(IEmployeeRepository employeeRepository)
+        public HomeController(IEmployeeRepository employeeRepository)
         {
             _employeeRepository = employeeRepository;
         }
 
         
-        public ViewResult List()
+        public ViewResult Index()
         {
            var model =_employeeRepository.GetAllEmployees();
-            return View("~/Views/Home/Index.cshtml",model);
+            return View(model);
         }
 
         

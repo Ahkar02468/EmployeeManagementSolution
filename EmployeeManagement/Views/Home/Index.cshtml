@@ -2,26 +2,22 @@
 
 
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Employee List";
 }
 
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Department</th>
-        </tr>
-    </thead>
-    <tbody>
+    <div class="card-deck">
         @foreach (var Employees in Model)
-        {
-            <tr>
-                <td>@Employees.Id</td>
-                <td>@Employees.Name</td>
-                <td>@Employees.Department</td>
-            </tr>
+        { 
+            <div class="card m-3">
+                <div class="card-header">
+                    <h3>@Employees.Name</h3>
+                </div>
+                <img class="card-img-top" scr="~/Images/employee.jpg" />
+                <div>
+                    <a href="#" class="btn btn-primary">View</a>
+                    <a href="#" class="btn btn-primary">Edit</a>
+                    <a href="#" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
         }
-    </tbody>
-</table>
+    </div>
